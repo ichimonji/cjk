@@ -1,0 +1,39 @@
+{
+  "name": "text-converter",
+  "version": "1.0.0",
+  "description": "「Original Text」欄に変換したいテキストを入れ各種の変換ボタンを押してください。「Converted Text」欄に変換後のテキストが出力されます。  \r 変換後のテキストをさらに変換したい場合は「__MOVE__」ボタンを押して変換後テキストを「Original Text」欄に移動させてください。  \r 「AUTO MOVE」にチェックを入れると自動で変換後のテキストが「Original Text」欄に移動します。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "b": "browserify js/index.es6.js -t [ babelify ] > js/index.js",
+    "bm": "browserify js/index.es6.js -t [ babelify --compact ] | uglifyjs > js/index.js",
+    "watch": "watchify js/index.es6.js -t babelify --compact -o js/index.js -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ichimonji/textConvertor.git"
+  },
+  "author": "ichimonji",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ichimonji/textConvertor/issues"
+  },
+  "homepage": "https://github.com/ichimonji/textConvertor#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-unicode-property-regex": "^7.0.0",
+    "@babel/plugin-transform-object-assign": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "babelify": "^10.0.0",
+    "uglify": "^0.1.5",
+    "uglify-js": "^3.4.9"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "bootstrap": "^4.1.3",
+    "jquery": "^3.3.1",
+    "lodash": "^4.17.11",
+    "popper.js": "^1.14.3",
+    "watchify": "^3.11.0"
+  }
+}

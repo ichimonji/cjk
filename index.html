@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>sample</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:900">
+    <link rel="stylesheet" href="css/index.css">
+  </head>
+  <body></body>
+  <div class="container">
+    <form class="form" id="sample">
+      <div class="form__group">
+        <h1 class="form__head">CJK CONVERTER</h1>
+      </div>
+      <div class="form__group">
+        <input class="input" id="input" type="text" value="" placeholder="search">
+      </div>
+      <div class="form__group">
+        <label class="radioList">
+          <div class="radioList__head">input</div>
+          <div class="radioList__body">
+            <input class="radio" id="inputTypeipt_dec" type="radio" name="inputType" value="ipt_dec" checked>
+            <label class="radioList__item" for="inputTypeipt_dec">dec</label>
+            <input class="radio" id="inputTypeipt_hex" type="radio" name="inputType" value="ipt_hex">
+            <label class="radioList__item" for="inputTypeipt_hex">hex</label>
+            <input class="radio" id="inputTypeipt_string" type="radio" name="inputType" value="ipt_string">
+            <label class="radioList__item" for="inputTypeipt_string">string</label>
+            <input class="radio" id="inputTypeipt_pinyin" type="radio" name="inputType" value="ipt_pinyin">
+            <label class="radioList__item" for="inputTypeipt_pinyin">pinyin</label>
+            <input class="radio" id="inputTypeipt_spell" type="radio" name="inputType" value="ipt_spell">
+            <label class="radioList__item" for="inputTypeipt_spell">spell</label>
+            <input class="radio" id="inputTypeipt_pinyin2" type="radio" name="inputType" value="ipt_pinyin2">
+            <label class="radioList__item" for="inputTypeipt_pinyin2">pinyin2</label>
+            <input class="radio" id="inputTypeipt_zhuyin" type="radio" name="inputType" value="ipt_zhuyin">
+            <label class="radioList__item" for="inputTypeipt_zhuyin">zhuyin</label>
+            <input class="radio" id="inputTypeipt_zhuyin2" type="radio" name="inputType" value="ipt_zhuyin2">
+            <label class="radioList__item" for="inputTypeipt_zhuyin2">zhuyin2</label>
+          </div>
+        </label>
+        <label class="radioList">
+          <div class="radioList__head">output</div>
+          <div class="radioList__body">
+            <input class="radio" id="outputTypeopt_json" type="radio" name="outputType" value="opt_json" checked>
+            <label class="radioList__item" for="outputTypeopt_json">json</label>
+            <input class="radio" id="outputTypeopt_dec" type="radio" name="outputType" value="opt_dec">
+            <label class="radioList__item" for="outputTypeopt_dec">dec</label>
+            <input class="radio" id="outputTypeopt_hex" type="radio" name="outputType" value="opt_hex">
+            <label class="radioList__item" for="outputTypeopt_hex">hex</label>
+            <input class="radio" id="outputTypeopt_entity" type="radio" name="outputType" value="opt_entity">
+            <label class="radioList__item" for="outputTypeopt_entity">entity</label>
+            <input class="radio" id="outputTypeopt_pinyin" type="radio" name="outputType" value="opt_pinyin">
+            <label class="radioList__item" for="outputTypeopt_pinyin">pinyin</label>
+            <input class="radio" id="outputTypeopt_pinyin2" type="radio" name="outputType" value="opt_pinyin2">
+            <label class="radioList__item" for="outputTypeopt_pinyin2">pinyin2</label>
+            <input class="radio" id="outputTypeopt_zhuyin" type="radio" name="outputType" value="opt_zhuyin">
+            <label class="radioList__item" for="outputTypeopt_zhuyin">zhuyin</label>
+            <input class="radio" id="outputTypeopt_zhuyin2" type="radio" name="outputType" value="opt_zhuyin2">
+            <label class="radioList__item" for="outputTypeopt_zhuyin2">zhuyin2</label>
+          </div>
+        </label>
+        <label class="radioList radioList--valueType">
+          <div class="radioList__head">value type</div>
+          <div class="radioList__body">
+            <input class="radio" id="valueTypevalue_string" type="radio" name="valueType" value="value_string" checked>
+            <label class="radioList__item" for="valueTypevalue_string">string</label>
+            <input class="radio" id="valueTypevalue_json" type="radio" name="valueType" value="value_json">
+            <label class="radioList__item" for="valueTypevalue_json">json</label>
+          </div>
+        </label>
+        <label class="radioList radioList--delimiter">
+          <div class="radioList__head">delimiter</div>
+          <div class="radioList__body">
+            <input class="radio" id="delimiternone" type="radio" name="delimiter" value="">
+            <label class="radioList__item" for="delimiternone">none ''</label>
+            <input class="radio" id="delimiterslash" type="radio" name="delimiter" value="/" checked>
+            <label class="radioList__item" for="delimiterslash">slash '/'</label>
+            <input class="radio" id="delimitercomma" type="radio" name="delimiter" value=",">
+            <label class="radioList__item" for="delimitercomma">comma ','</label>
+            <input class="radio" id="delimiterhyphen" type="radio" name="delimiter" value="-">
+            <label class="radioList__item" for="delimiterhyphen">hyphen '-'</label>
+          </div>
+        </label>
+        <label class="radioList radioList--separator">
+          <div class="radioList__head">separator</div>
+          <div class="radioList__body">
+            <input class="radio" id="separatornone" type="radio" name="separator" value="">
+            <label class="radioList__item" for="separatornone">none ''</label>
+            <input class="radio" id="separatorparen" type="radio" name="separator" value="()">
+            <label class="radioList__item" for="separatorparen">paren '()'</label>
+            <input class="radio" id="separatorbracket" type="radio" name="separator" value="[]" checked>
+            <label class="radioList__item" for="separatorbracket">bracket '[]'</label>
+            <input class="radio" id="separatorbrace" type="radio" name="separator" value="{}">
+            <label class="radioList__item" for="separatorbrace">brace '{}'</label>
+          </div>
+        </label>
+        <label class="radioList radioList--divider">
+          <div class="radioList__head">divider</div>
+          <div class="radioList__body">
+            <input class="radio" id="dividernone" type="radio" name="divider" value="">
+            <label class="radioList__item" for="dividernone">none ''</label>
+            <input class="radio" id="dividercomma" type="radio" name="divider" value="," checked>
+            <label class="radioList__item" for="dividercomma">comma ','</label>
+            <input class="radio" id="dividerslash" type="radio" name="divider" value="/">
+            <label class="radioList__item" for="dividerslash">slash '/'</label>
+            <input class="radio" id="dividerhyphen" type="radio" name="divider" value="-">
+            <label class="radioList__item" for="dividerhyphen">hyphen '-'</label>
+          </div>
+        </label>
+        <label class="checkList checkList--json">
+          <div class="checkList__head">json</div>
+          <div class="checkList__body">
+            <input class="check" id="jsonListjlt_dec" type="checkbox" name="jsonList" value="jlt_dec" checked>
+            <label class="checkList__item" for="jsonListjlt_dec">dec</label>
+            <input class="check" id="jsonListjlt_hex" type="checkbox" name="jsonList" value="jlt_hex">
+            <label class="checkList__item" for="jsonListjlt_hex">hex</label>
+            <input class="check" id="jsonListjlt_entity" type="checkbox" name="jsonList" value="jlt_entity">
+            <label class="checkList__item" for="jsonListjlt_entity">entity</label>
+            <input class="check" id="jsonListjlt_pinyin" type="checkbox" name="jsonList" value="jlt_pinyin">
+            <label class="checkList__item" for="jsonListjlt_pinyin">pinyin</label>
+            <input class="check" id="jsonListjlt_pinyin2" type="checkbox" name="jsonList" value="jlt_pinyin2">
+            <label class="checkList__item" for="jsonListjlt_pinyin2">pinyin2</label>
+            <input class="check" id="jsonListjlt_spell" type="checkbox" name="jsonList" value="jlt_spell">
+            <label class="checkList__item" for="jsonListjlt_spell">spell</label>
+            <input class="check" id="jsonListjlt_tone" type="checkbox" name="jsonList" value="jlt_tone">
+            <label class="checkList__item" for="jsonListjlt_tone">tone</label>
+            <input class="check" id="jsonListjlt_zhuyin" type="checkbox" name="jsonList" value="jlt_zhuyin">
+            <label class="checkList__item" for="jsonListjlt_zhuyin">zhuyin</label>
+            <input class="check" id="jsonListjlt_zhuyin2" type="checkbox" name="jsonList" value="jlt_zhuyin2">
+            <label class="checkList__item" for="jsonListjlt_zhuyin2">zhuyin2</label>
+          </div>
+        </label>
+        <label class="radioList radioList--through">
+          <div class="radioList__head">through</div>
+          <div class="radioList__body">
+            <input class="check" id="throughthrough" type="radio" name="through" value="through" checked>
+            <label class="checkList__item" for="throughthrough">through</label>
+            <input class="check" id="throughnotThrough" type="radio" name="through" value="notThrough">
+            <label class="checkList__item" for="throughnotThrough">not through</label>
+            <input class="check" id="throughoriginal" type="radio" name="through" value="original">
+            <label class="checkList__item" for="throughoriginal">original</label>
+          </div>
+        </label>
+      </div>
+      <div class="form__group form__group--control">
+        <button class="button" id="convert" type="button">convert</button>
+        <button class="button" id="reset" type="reset">reset</button>
+      </div>
+      <div class="form__group">
+        <div class="output" id="output"></div>
+      </div>
+    </form>
+    <script src="js/index.js"></script>
+  </div>
+</html>

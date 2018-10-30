@@ -1,0 +1,184 @@
+@charset 'utf-8'
+@import 'nib'
+
+global_reset()
+nested-reset()
+reset-html5()
+
+break( $scname )
+  @media screen and ( max-width: $scname )
+    {block}
+
+breakUp( $scname )
+  @media screen and ( min-width: $scname + 1 )
+    {block}
+
+$col_bgLevel1 = #555
+$col_bgLevel2 = #333
+$col_bgLevel3 = #777
+$col_bgLevel3_2 = #444
+$col_ftLevel3_2 = #aaa
+$col_ftLevel4 = #bbb
+
+$col_bg_midBlue = #66a
+$col_bg_darkBlue = #448
+$col_ft_darkBlue = #88d
+$white = #fff
+
+
+:root
+  font-size 16px
+  font-family sans-serif
+
+body
+  margin 0
+  padding 0
+  background-color $col_bgLevel1
+  min-height 100vh
+  font-size 1rem
+
+.container
+  min-height 100vh
+  display flex
+  flex-flow column nowrap
+  justify-content center
+  align-items center
+  +break(560px)
+    justify-content flex-start
+    background-color $col_bgLevel2
+
+.form
+  background-color $col_bgLevel2
+  border-radius 12px
+  display flex
+  flex-flow column nowrap
+  justify-content center
+  align-items stretch
+  padding 4px
+  width 560px
+  max-width 100%
+  box-sizing border-box
+  +break(560px)
+    justify-content flex-start
+    border-radius 0
+
+  &__head
+    color $col_ftLevel4;
+    font-weight 600
+
+  &__group
+    padding 4px
+    &--control
+      text-align center
+
+.input
+  &[type='text']
+    width 100%
+    display block
+    border none
+    border-radius 4px
+    padding 2px 4px
+    box-sizing border-box
+    background-color $col_bgLevel3_2
+    color $col_ftLevel3_2
+
+.output
+  width 100%
+  display block
+  border none
+  border-radius 4px
+  font-size 14px
+  padding 2px 4px
+  box-sizing border-box
+  background-color $col_bgLevel3_2
+  color $white
+  min-height 18px
+
+.button
+  width 30%
+  text-align center
+  margin 0 auto
+  border none
+  display inline-block
+  border-radius 4px
+  padding 2px 4px
+  box-sizing border-box
+  background-color $col_bgLevel3
+
+.radioList,
+.checkList
+  display flex
+  flex-direction row
+  flex-wrap nowrap
+  justify-content stretch
+  align-items stretch
+  border-radius 4px
+  background-color $col_bg_midBlue
+  font-weight 600
+  overflow hidden
+  line-height 1
+  vertical-align middle
+  text-transform uppercase
+  font-size .8rem
+  +break(560px)
+    flex-direction column
+    justify-content flex-start
+
+  &.hidden
+    display none
+
+  &:not( :first-child )
+    margin-top 8px
+
+  &__head
+    flex-basis 96px
+    flex-shrink 0
+    padding 4px
+    background-color $col_bg_darkBlue
+    color $col_ft_darkBlue
+    box-sizing border-box
+    display flex
+    flex-flow row nowrap
+    justify-content flex-start
+    align-items center
+    +break(560px)
+      flex-basis auto
+
+  &__body
+    width auto
+    flex-basis auto
+    flex-grow 1
+    display flex
+    flex-flow row wrap
+    justify-content stretch
+    align-items stretch
+
+  &__item
+    margin 0
+    flex-grow 1
+    max-width 50%
+    min-width 10%
+    border none
+    border-radius 0
+    background-color transparent
+    font-weight 600
+    font-family 'Arial'
+    line-height 1.6
+    vertical-align middle
+    color $col_ft_darkBlue
+    font-size .8rem
+    display flex
+    flex-flow row nowrap
+    justify-content center
+    align-items center
+    box-sizing border-box
+    padding 0 3px
+
+    .radio:checked + &,
+    .check:checked + &
+      color $white
+      background-color darken($col_bg_midBlue, 10%)
+
+  .radio,
+  .check
+    display none

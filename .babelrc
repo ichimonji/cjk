@@ -1,0 +1,9 @@
+{
+	"presets": [
+		"@babel/preset-env"
+	],
+	"plugins": [
+		"@babel/plugin-proposal-unicode-property-regex",
+		"@babel/plugin-transform-object-assign"
+	]
+}

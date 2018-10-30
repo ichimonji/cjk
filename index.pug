@@ -1,0 +1,90 @@
+doctype html
+html(lang='en')
+  head
+    title sample
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lato:900')
+    link(rel='stylesheet', href='css/index.css')
+  body
+  .container
+    form.form#sample
+      .form__group
+        h1.form__head CJK CONVERTER
+      .form__group
+        input#input.input(type='text', value='', placeholder='search')
+      .form__group
+        -
+          const
+            inputs = [ 'ipt_dec', 'ipt_hex', 'ipt_string', 'ipt_pinyin', 'ipt_spell', 'ipt_pinyin2', 'ipt_zhuyin', 'ipt_zhuyin2' ],
+            outputs = [ 'opt_json', 'opt_dec', 'opt_hex', 'opt_entity', 'opt_pinyin', 'opt_pinyin2', 'opt_zhuyin', 'opt_zhuyin2' ],
+            valueType = [ 'value_string', 'value_json' ],
+            delimiters = { none: '', slash: '/', comma: ',', hyphen: '-' },
+            separators = { none: '', paren: '()', bracket: '[]', brace: '{}' },
+            dividers = { none: '', comma: ',', slash: '/', hyphen: '-' },
+            jsonKeys = [ 'jlt_dec', 'jlt_hex', 'jlt_entity', 'jlt_pinyin', 'jlt_pinyin2', 'jlt_spell', 'jlt_tone', 'jlt_zhuyin', 'jlt_zhuyin2' ],
+            throughs = { through: 'through', notThrough: 'not through', original: 'original' };
+        label.radioList
+          .radioList__head input
+          .radioList__body
+            each val, index in inputs
+              input.radio(id='inputType'+val, type='radio', name="inputType", value=val, checked=!index)
+              label.radioList__item(for='inputType'+val)
+                | #{val.replace('ipt_', '')}
+        label.radioList
+          .radioList__head output
+          .radioList__body
+            each val, index in outputs
+              input.radio(id='outputType'+val, type='radio', name="outputType", value=val, checked=!index)
+              label.radioList__item(for='outputType'+val)
+                | #{val.replace('opt_', '')}
+        label.radioList.radioList--valueType
+          .radioList__head value type
+          .radioList__body
+            each val, index in valueType
+              input.radio(id='valueType'+val, type='radio', name="valueType", value=val, checked=!index)
+              label.radioList__item(for='valueType'+val)
+                | #{val.replace('value_', '')}
+        label.radioList.radioList--delimiter
+          .radioList__head delimiter
+          .radioList__body
+            each val, key in delimiters
+              input.radio(id='delimiter'+key, type='radio', name="delimiter", value=val, checked=(key==='slash')?true:false)
+              label.radioList__item(for='delimiter'+key)
+                | #{key} '#{val}'
+        label.radioList.radioList--separator
+          .radioList__head separator
+          .radioList__body
+            each val, key in separators
+              input.radio(id='separator'+key, type='radio', name="separator", value=val, checked=(key==='bracket'))
+              label.radioList__item(for='separator'+key)
+                | #{key} '#{val}'
+        label.radioList.radioList--divider
+          .radioList__head divider
+          .radioList__body
+            each val, key in dividers
+              input.radio(id='divider'+key, type='radio', name="divider", value=val, checked=(key==='comma'))
+              label.radioList__item(for='divider'+key)
+                | #{key} '#{val}'
+        label.checkList.checkList--json
+          .checkList__head json
+          .checkList__body
+            each val, index in jsonKeys
+              input.check(id='jsonList'+val, type='checkbox', name="jsonList", value=val, checked=!index)
+              label.checkList__item(for='jsonList'+val)
+                | #{val.replace('jlt_', '')}
+        label.radioList.radioList--through
+          .radioList__head through
+          .radioList__body
+            each val, key in throughs
+              input.check(id='through'+key, type='radio', name="through", value=key, checked=(key==='through'))
+              label.checkList__item(for='through'+key)
+                | #{val}
+      .form__group.form__group--control
+        button#convert.button(type='button')
+          | convert
+        button#reset.button(type='reset')
+          | reset
+      .form__group
+        #output.output
+    script(src='js/index.js')
